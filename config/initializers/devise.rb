@@ -14,20 +14,20 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'c67a5886725e8bc66c4699b65d7f17d8de22476ec49ea81a9f597b3c374dbd03653fc9021d68fde5b3335d2ef147697eea71348e2d4511fed8cc55c8be82814d'
+  # config.secret_key = '8d55b7e1c20e7b5a74a4feb89f1aa86721b78cddc8cd3ed4e8e474c821f83b79418540b62cf91915a97593960dbcf0aa7e9bbcb6dd1e9c882ae713cf60cb2400'
   config.jwt do |jwt|
 		jwt.secret = Rails.application.credentials.devise[:jwt_secret_key]
 	end
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
-
+  config.navigational_formats = []
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-
+  #config.mailer_sender = 'bertholetguillaume@gmail.com'
+  config.mailer = 'UserMailer'
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
@@ -128,7 +128,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'ae34f5227bce486477a9abcee3baa14964ff9e2ba9e177eddabecfea168967f58d61bf091499360f2bffe37a1e609745cbb28a7eb627291a6ad6539f2b65392c'
+  # config.pepper = 'c79eea0bda2f2fbb3dbcebf2bc19a2b8f52acc7225764636d1ba0928d715a3d160c0a9f9170d18b0f2c608bdeab8ef08ca359d1a6f2550746abb67db8e39d05d'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -221,7 +221,7 @@ Devise.setup do |config|
   # ==> Configuration for :recoverable
   #
   # Defines which key will be used when recovering the password for an account
-  # config.reset_password_keys = [:email]
+  config.reset_password_keys = [:email]
 
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
